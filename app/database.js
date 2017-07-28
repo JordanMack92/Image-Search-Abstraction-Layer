@@ -6,6 +6,9 @@ var methods = {};
 methods.insert = function(search){
   mongo.connect(url, function(err, db){
     if (err) throw err
-    db.collection('search-history').insert()
+    db.collection('search-history').insert( {"term": search, "when": new Date() }  )
+    db.close();
   });
-}
+};
+
+module.export = methods;

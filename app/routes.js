@@ -1,3 +1,4 @@
+var db = require('./database.js');
 module.exports = function(app){
   
   app.route('/')
@@ -6,7 +7,9 @@ module.exports = function(app){
     });
   
   app.route('/api/:search').get(function(req,res){
-    
+    var search = req.params.search;
+    //db.insert(search);
+    re
     
     
     
