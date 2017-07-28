@@ -5,10 +5,19 @@ var methods = {};
 
 methods.insert = function(search){
   mongo.connect(url, function(err, db){
-    //if (err) throw err
+    if (err) throw err
     db.collection('search-history').insert( {"term": search, "when": new Date() }  );
     db.close();
   });
+  
+methods.showHistory = function(response){
+  mongo.connect(url, function(err, db){
+    if (err) throw err
+    db.collection('search-history')
+  });
+}
+  
+  
 };
 
 module.exports = methods;
