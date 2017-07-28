@@ -4,7 +4,7 @@ var bl = require('bl');
 
 var methods = {};
 
-methods.pixabay = https.request(optionsget, function(res){
+methods.pixabay = function(search){
   
   var path = '/api/?key=6024198-b891a26ae50627de5f5a0e197&q='+search+'&image_type=photo'
   var url = 'https://pixabay.com/api/?key=6024198-b891a26ae50627de5f5a0e197&q='+search+'&image_type=photo';
@@ -16,18 +16,25 @@ methods.pixabay = https.request(optionsget, function(res){
     method : 'GET' // do GET
 };
   
-  
+  https.request(optionsget, function(res){
     
-    res.pipe(bl(function (err, data){
+//     res.pipe(bl(function (err, data){
+      
+//         if(err){console.log(err);}
+//         data = data.toString();
+//         console.log(data);
+      
+//     }));
+     res.on('data', function(data){
+       res.pipe(bl(function (err, data){
       
         if(err){console.log(err);}
         data = data.toString();
-        console.log(data);
+         console.log(data);
+      return data;
+     }));
       
-    }));
-    // res.on('data', function(data){
-    //   console.log(data);
-    // });
+     });
   }).end();
   
   
@@ -41,7 +48,7 @@ methods.pixabay = https.request(optionsget, function(res){
 //    $.getJSON(url, function(data){
 //     return data;
 //   });
-
+};
   
   
   

@@ -14,8 +14,8 @@ module.exports = function(app){
     var search = req.params.search;
     db.insert(search);
     var offset = req.query.offset;
-    res.send(api.pixabay(search));
-    //res.send(images);
+    //res.send(api.pixabay(search));
+    res.send();
 
   });
   
