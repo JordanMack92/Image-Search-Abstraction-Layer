@@ -12,7 +12,7 @@ module.exports = function(app){
     var search = req.params.search;
     db.insert(search);
     var offset = req.query.offset;
-    var pixabay = api.pixabay(search);
+    //var pixabay = api.pixabay(search);
     res.send(pixabay);
   });
   
