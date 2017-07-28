@@ -1,6 +1,5 @@
 var db = require('./database.js');
 var api = require('./api.js');
-var search = require('image-search');
 
 
 
@@ -15,9 +14,9 @@ module.exports = function(app){
     var search = req.params.search;
     db.insert(search);
     var offset = req.query.offset;
-    search.google('cats', function(err, images) {
-    res.send(images);
-    });
+    res.send(api.pixabay(search));
+    //res.send(images);
+
   });
   
 }
