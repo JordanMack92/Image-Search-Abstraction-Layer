@@ -4,10 +4,10 @@ var bl = require('bl');
 
 var methods = {};
 
-methods.pixabay = function(search){
+methods.pixabay = function(search, response, offset){
   
-  var path = '/api/?key=6024198-b891a26ae50627de5f5a0e197&q='+search+'&image_type=photo'
-  var url = 'https://pixabay.com/api/?key=6024198-b891a26ae50627de5f5a0e197&q='+search+'&image_type=photo';
+  var path = '/api/?key=6024198-b891a26ae50627de5f5a0e197&q='+search+'&image_type=photo&per_page=200'
+  var url = 'https://pixabay.com/api/?key=6024198-b891a26ae50627de5f5a0e197&q='+search+'&image_type=photo&per_page=200';
   var optionsget = {
     host : 'pixabay.com', // here only the domain name
     // (no http/https !)
@@ -18,36 +18,23 @@ methods.pixabay = function(search){
   
   https.request(optionsget, function(res){
     
-//     res.pipe(bl(function (err, data){
-      
-//         if(err){console.log(err);}
-//         data = data.toString();
-//         console.log(data);
-      
-//     }));
-     res.on('data', function(data){
-       res.pipe(bl(function (err, data){
+    res.pipe(bl(function (err, data){
       
         if(err){console.log(err);}
-        data = data.toString();
-         console.log(data);
-      return data;
-     }));
+       data = data.toString();
+      var images=[];
+      for (var i = offset; i < data.hits.length; i++){
+        imag
+      }
       
-     });
-  }).end();
+      
+       response.send(data);
+      
+     }));
+    
+      
+     }).end();
   
-  
-  
-//   require("jsdom").env("", function(err, window) {
-//     if (err) throw err
-
-//     var $ = require("jquery")(window);
-//     var url = 'https://pixabay.com/api/?key=6024198-b891a26ae50627de5f5a0e197&q='+search+'&image_type=photo';
-  
-//    $.getJSON(url, function(data){
-//     return data;
-//   });
 };
   
   
