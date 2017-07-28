@@ -31,6 +31,9 @@ methods.pixabay = function(search, response, offset){
           "Thumbnail": data.hits[i].previewURL,
           "Context": data.hits[i].pageURL
         });
+        if (images.length == 10){
+          break;
+        }
       }
       
       console.log(images);
