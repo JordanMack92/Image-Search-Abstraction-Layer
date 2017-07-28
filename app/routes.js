@@ -13,7 +13,7 @@ module.exports = function(app){
     db.insert(search);
     var offset = req.query.offset;
     //var pixabay = api.pixabay(search);
-    res.send(pixabay);
+    res.send(api.pixabay(search));
   });
   
 }
