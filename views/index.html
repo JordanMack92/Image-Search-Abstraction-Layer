@@ -1,17 +1,46 @@
 <!DOCTYPE html>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 <html>
 
    <head>
-      <title>Backend Challenges | Free Code Camp</title>
-      <link rel="shortcut icon" href="https://cdn.hyperdev.com/us-east-1%3A52a203ff-088b-420f-81be-45bf559d01b1%2Ffavicon.ico" type="image/x-icon"/>
+      <title>Image Search Abstraction Layer</title>
       <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" type="text/css">
       <link href="/public/style.css" rel="stylesheet" type="text/css">
    </head>
 
    <body>
       <div class="container">
-         <h1>Manage Node.js projects and npm packages using package.json</h1>
-         <h3>Part 1 of Free Code Camp Backend Challenges</h3>
+         <h1>API Basejump: Image Search Abstraction Layer</h1>
+         
+        <div id = "user-stories">
+          <div id = "user-stories-text">
+          <p>User Stories:</p>
+          <ol>
+            <li>I can get the image URLs, alt text and page urls for a set of images relating to a given search string.</li>
+            <li>I can paginate through the responses by adding a ?offset=2 parameter to the URL.</li>
+            <li>I can get a list of the most recently submitted search strings.</li>
+          </ol>
+          </div>
+        </div>
+        
+        
+       
+        <div>
+          <h3>Example Query Usage</h3>
+          <a href="https://mack-image-search.glitch.me/lolcats%20funny?offset=10" target = "_blank"><code>https://mack-image-search.glitch.me/lolcats%20funny?offset=10</code></a>
+        </div>
+        <div>
+          <h3>Example Creation Output</h3>
+          <code>{ "real-URL": https://www.facebook.com, "short-URL": "https://mack-url-shortener.glitch.me/2" }</code>
+        </div>
+        
+        <div>
+          <h3>Usage (this link will redirect you to Facebook)</h3>   
+          <a href="https://mack-url-shortener.glitch.me/2" target = "_blank"><code>https://mack-url-shortener.glitch.me/2</code></a>
+        </div>
+          
+          
+        
       </div>
    </body>
 
