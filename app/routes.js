@@ -8,11 +8,8 @@ module.exports = function(app){
   
   app.route('/api/:search').get(function(req,res){
     var search = req.params.search;
-    //db.insert(search);
-    re
-    
-    
-    
+    db.insert(search);
+    var offset = req.query.offset;
   });
   
 }
