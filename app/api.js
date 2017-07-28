@@ -1,4 +1,12 @@
-var $ = require('jquery');
+var $;
+require("jsdom").env("", function(err, window) {
+    if (err) {
+        console.error(err);
+        return;
+    }
+
+   $ = require("jquery")(window);
+});
 
 var methods = {};
 
