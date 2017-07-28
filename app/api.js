@@ -7,7 +7,6 @@ var methods = {};
 methods.pixabay = function(search, response, offset){
   
   var path = '/api/?key=6024198-b891a26ae50627de5f5a0e197&q='+search+'&image_type=photo&per_page=200'
-  var url = 'https://pixabay.com/api/?key=6024198-b891a26ae50627de5f5a0e197&q='+search+'&image_type=photo&per_page=200';
   var optionsget = {
     host : 'pixabay.com', // here only the domain name
     // (no http/https !)
@@ -44,8 +43,5 @@ methods.pixabay = function(search, response, offset){
   
 };
   
-  
-  
-
 
 module.exports = methods;
