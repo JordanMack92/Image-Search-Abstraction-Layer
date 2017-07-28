@@ -1,5 +1,9 @@
 /****** Main Styling ******/
 
+.credits{
+  margin: 5% 0% 5% 0%;
+}
+
 #user-stories{
   border-left: 5px solid gray;
   width: 70%;
